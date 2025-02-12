@@ -18,6 +18,7 @@ const LoginView = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
+      {/* Text Input Feilds */ }
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -34,9 +35,11 @@ const LoginView = () => {
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        {/* Confirm Login */ }
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleSignupPress}>
+        {/* Route to sing up page*/ }
         <Text style={styles.linkText}>Create Account</Text>
       </TouchableOpacity>
     </View>

@@ -65,7 +65,7 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
 
-      
+      {/* Login and Signup Buttons*/}
       <ThemedView style={styles.authButtonsContainer}>
         <TouchableOpacity style={styles.authButton} onPress={handleLoginPress}>
           <Text style={styles.authButtonText}>Login</Text>
@@ -77,7 +77,7 @@ export default function HomeScreen() {
     </ParallaxScrollView>
   );
 }
-
+ 
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',

@@ -21,9 +21,12 @@ const SignupView = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
+        {/* back arrow**/ }
         <Ionicons name="arrow-back" size={24} color="#000" />
       </TouchableOpacity>
+      {/* create acc */ }
       <Text style={styles.title}>Create Account</Text>
+      {/* Text Input Feilds */ }
       <TextInput
         style={styles.input}
         placeholder="Full Name"
@@ -56,9 +59,11 @@ const SignupView = () => {
         secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
+        {/* Sign up Button */ }
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleBackPress}>
+        {/* Alr have an account button */ }
         <Text style={styles.linkText}>Already have an account? Sign In</Text>
       </TouchableOpacity>
     </View>
