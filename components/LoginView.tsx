@@ -12,7 +12,7 @@ const LoginView = () => {
   };
 
   const handleSignupPress = () => {
-    router.push('/auth/signup'); // Navigate to the Signup screen
+    router.push('/auth/signup');
   };
 
   return (
@@ -21,14 +21,14 @@ const LoginView = () => {
       <TextInput
         style={styles.input}
         placeholder="Username"
-        placeholderTextColor="#999" // Set placeholder text color
+        placeholderTextColor="#999"
         value={username}
         onChangeText={setUsername}
       />
       <TextInput
         style={styles.input}
         placeholder="Password"
-        placeholderTextColor="#999" // Set placeholder text color
+        placeholderTextColor="#999"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
@@ -48,22 +48,22 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 16,
-    backgroundColor: '#fff', // Set background color to white
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 24,
     marginBottom: 16,
     textAlign: 'center',
-    color: '#000', // Set text color to black
+    color: '#000',
   },
   input: {
     height: 40,
-    borderColor: '#ccc', // Set border color
+    borderColor: '#ccc',
     borderWidth: 1,
     marginBottom: 12,
     paddingHorizontal: 8,
-    color: '#000', // Set text color to black
-    backgroundColor: '#fff', // Set input background color to white
+    color: '#000',
+    backgroundColor: '#fff',
   },
   button: {
     backgroundColor: '#007BFF',

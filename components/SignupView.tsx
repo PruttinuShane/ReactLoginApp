@@ -15,17 +15,15 @@ const SignupView = () => {
   };
 
   const handleBackPress = () => {
-    router.push('/auth/login'); // Navigate to the Login screen
+    router.push('/auth/login');
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
-        <Ionicons name="arrow-back" size={24} color="#000" /> {/* Back arrow icon */}
+        <Ionicons name="arrow-back" size={24} color="#000" />
       </TouchableOpacity>
       <Text style={styles.title}>Create Account</Text>
-
-      {/* Full Name Input */}
       <TextInput
         style={styles.input}
         placeholder="Full Name"
@@ -33,8 +31,6 @@ const SignupView = () => {
         value={fullName}
         onChangeText={setFullName}
       />
-
-      {/* Email Input */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -43,8 +39,6 @@ const SignupView = () => {
         onChangeText={setEmail}
         keyboardType="email-address"
       />
-
-      {/* Password Input */}
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -53,8 +47,6 @@ const SignupView = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
-
-      {/* Confirm Password Input */}
       <TextInput
         style={styles.input}
         placeholder="Confirm Password"
@@ -63,13 +55,9 @@ const SignupView = () => {
         onChangeText={setConfirmPassword}
         secureTextEntry
       />
-
-      {/* Sign Up Button */}
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
-
-      {/* Link to Login Screen */}
       <TouchableOpacity onPress={handleBackPress}>
         <Text style={styles.linkText}>Already have an account? Sign In</Text>
       </TouchableOpacity>

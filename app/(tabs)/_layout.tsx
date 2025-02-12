@@ -13,29 +13,29 @@ export default function RootLayout() {
 
   return (
     <Stack>
-      {/* Tabs Navigation */}
+      
       <Stack.Screen
         name="(tabs)"
         options={{
-          headerShown: false, // Hide the header for tabs
+          headerShown: false, 
         }}
       />
 
-      {/* Login Screen */}
+     
       <Stack.Screen
         name="auth/login"
         options={{
-          title: 'Login', // Set the title for the Login screen
-          headerShown: true, // Show the header for the Login screen
+          title: 'Login', 
+          headerShown: true, 
         }}
       />
 
-      {/* Signup Screen */}
+      
       <Stack.Screen
         name="auth/signup"
         options={{
-          title: 'Sign Up', // Set the title for the Signup screen
-          headerShown: true, // Show the header for the Signup screen
+          title: 'Sign Up', 
+          headerShown: true, 
         }}
       />
     </Stack>

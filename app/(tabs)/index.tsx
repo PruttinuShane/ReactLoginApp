@@ -4,17 +4,17 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { useRouter } from 'expo-router'; // Use useRouter from expo-router
+import { useRouter } from 'expo-router'; 
 
 export default function HomeScreen() {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
 
   const handleLoginPress = () => {
-    router.push('/auth/login'); // Navigate to the Login screen
+    router.push('/auth/login'); 
   };
 
   const handleSignupPress = () => {
-    router.push('/auth/signup'); // Navigate to the Signup screen
+    router.push('/auth/signup'); 
   };
 
   return (
@@ -65,7 +65,7 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
 
-      {/* Add Login and Signup buttons */}
+      
       <ThemedView style={styles.authButtonsContainer}>
         <TouchableOpacity style={styles.authButton} onPress={handleLoginPress}>
           <Text style={styles.authButtonText}>Login</Text>
