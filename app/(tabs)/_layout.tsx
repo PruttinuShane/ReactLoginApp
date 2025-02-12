@@ -1,4 +1,4 @@
-import { Tabs } from 'expo-router';
+import { Stack } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
@@ -8,38 +8,36 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
+    <Stack>
+      {/* Tabs Navigation */}
+      <Stack.Screen
+        name="(tabs)"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          headerShown: false, // Hide the header for tabs
         }}
       />
-      <Tabs.Screen
-        name="explore"
+
+      {/* Login Screen */}
+      <Stack.Screen
+        name="auth/login"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Login', // Set the title for the Login screen
+          headerShown: true, // Show the header for the Login screen
         }}
       />
-    </Tabs>
+
+      {/* Signup Screen */}
+      <Stack.Screen
+        name="auth/signup"
+        options={{
+          title: 'Sign Up', // Set the title for the Signup screen
+          headerShown: true, // Show the header for the Signup screen
+        }}
+      />
+    </Stack>
   );
 }

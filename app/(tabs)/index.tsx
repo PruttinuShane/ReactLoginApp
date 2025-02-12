@@ -1,11 +1,22 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import React from 'react';
+import { Image, StyleSheet, Platform, TouchableOpacity, Text, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useRouter } from 'expo-router'; // Use useRouter from expo-router
 
 export default function HomeScreen() {
+  const router = useRouter(); // Initialize the router
+
+  const handleLoginPress = () => {
+    router.push('/auth/login'); // Navigate to the Login screen
+  };
+
+  const handleSignupPress = () => {
+    router.push('/auth/signup'); // Navigate to the Signup screen
+  };
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -19,6 +30,7 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -28,18 +40,20 @@ export default function HomeScreen() {
             {Platform.select({
               ios: 'cmd + d',
               android: 'cmd + m',
-              web: 'F12'
+              web: 'F12',
             })}
           </ThemedText>{' '}
           to open developer tools.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
           Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
@@ -49,6 +63,16 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
+      </ThemedView>
+
+      {/* Add Login and Signup buttons */}
+      <ThemedView style={styles.authButtonsContainer}>
+        <TouchableOpacity style={styles.authButton} onPress={handleLoginPress}>
+          <Text style={styles.authButtonText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.authButton} onPress={handleSignupPress}>
+          <Text style={styles.authButtonText}>Sign Up</Text>
+        </TouchableOpacity>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -70,5 +94,21 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  authButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 20,
+  },
+  authButton: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5,
+    width: '40%',
+    alignItems: 'center',
+  },
+  authButtonText: {
+    color: 'white',
+    fontSize: 16,
   },
 });
